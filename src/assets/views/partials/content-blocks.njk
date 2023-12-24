@@ -1,0 +1,5 @@
+{% for item in contentBlocks %}
+  <section class="content-block content-block-{{ item.type }}">
+    {% include "partials/content-block-" + item.type + ".njk" %}
+  </section>
+{% endfor %}

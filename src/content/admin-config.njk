@@ -1,0 +1,44 @@
+---
+eleventyExcludeFromCollections: true
+title: "{{ site.siteName }} Content Manager config"
+permalink: "/admin/config.yml"
+---
+backend:
+  name: git-gateway
+  branch: {{ env.branch }}
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    editor:
+      preview: false
+    file: "src/content/pages/home.njk"
+    delete: false
+    extension: "njk"
+    format: "frontmatter"
+    fields:
+      - { label: "SEO Title", name: "title", widget: "string" }
+      - { label: "SEO Description", name: "description", widget: "text" }
+      - { label: "Page Title", name: "pageTitle", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Hero Image", name: "heroImage", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Resume Button", name: "resumeButton", widget: "object", fields: [
+        { label: "Resume Text", name: "resumeText", widget: "string" },
+        { label: "Resume Link", name: "resumeLink", widget: "string" }
+      ]}
+      {# button repeater #}
+      - { label: "Button Text", name: "buttonText", widget: "string" },
+      - { label: "Button Link", name: "buttonLink", widget: "string" }
+      - { label: "Open In New Tab", name: "newTab", widget: "boolean", default: true }
+      {# project repeater #}
+      {# social link repeater #}
+      - { label: "Social Links", name: "socialLinks", widget: "list", fields: [
+        { label: "Social Link", name: "socialLink", widget: "object", fields: [
+          { label: "Social Link Text", name: "socialLinkText", widget: "string" },
+          { label: "Social Link URL", name: "socialLinkURL", widget: "string" }
+          { label: "Social Link Icon", name: "socialLinkIcon", widget: "image" }
+        ]}
+      ]}
+      {# project repeater #}

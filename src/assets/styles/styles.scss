@@ -1,0 +1,147 @@
+/**
+ * Import stylesheet partials
+*/
+@import "bootstrap";
+@import "external";
+
+h1 {
+  font-family: Playfair Display;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+body {
+  background-color: #fefefe;
+  font-family: Nunito;
+  font-size: $spacer * 1.125;
+}
+
+.btn {
+  text-align: center;
+  font-family: Nunito;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 10px; /* 50% */
+  letter-spacing: 0.5px;
+}
+
+.homepage-card {
+  height: 90vh;
+  position: relative;
+  top: 5vh;
+
+  .homepage-card-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0px 4px 5px 3px rgba(0, 26, 70, 0.25);
+  }
+
+  .homepage-card-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  .homepage-card-body {
+    padding: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: $spacer * 2.5 $spacer * 3;
+    justify-content: space-between;
+
+    .homepage-card-body-top {
+      figure {
+        margin-bottom: $spacer * 2;
+      }
+
+      h1 {
+        margin-bottom: $spacer;
+        color: $primary;
+      }
+    }
+
+    .homepage-card-body-bottom {
+      .homepage-card-buttons {
+        margin-bottom: $spacer * 2;
+        display: flex;
+        flex-direction: column;
+        gap: $spacer;
+        .button {
+          @extend .btn, .btn-primary;
+
+          &:nth-child(even) {
+            @extend .btn, .btn-outline-primary;
+          }
+        }
+      }
+
+      .homepage-card-social {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .homepage-card-wrapper {
+      flex-direction: row;
+      height: 100%;
+    }
+
+    .homepage-card-image {
+      min-height: 100%;
+      height: 100%;
+      width: 100%;
+      width: 33%;
+      border-radius: 0 1.5rem 1.5rem 0;
+    }
+
+    .homepage-card-body {
+      width: 67%;
+      padding: $spacer * 5 $spacer * 6;
+
+      .homepage-card-body-top {
+        figure {
+          margin-bottom: $spacer * 3.5;
+        }
+
+        h1 {
+          font-size: $spacer * 3;
+          line-height: 0.9;
+          margin-bottom: $spacer * 2;
+          color: $primary;
+        }
+      }
+
+      .homepage-card-body-bottom {
+        .homepage-card-buttons {
+          margin-bottom: $spacer * 3.5;
+          flex-direction: row;
+          gap: $spacer * 2;
+          .button {
+            @extend .btn, .btn-primary;
+
+            &:nth-child(even) {
+              @extend .btn, .btn-outline-primary;
+            }
+          }
+        }
+      }
+    }
+
+    .homepage-card-social {
+      justify-content: unset;
+      gap: $spacer * 2;
+    }
+  }
+}
