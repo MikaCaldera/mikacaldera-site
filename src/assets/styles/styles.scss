@@ -29,12 +29,12 @@ body {
 }
 
 .homepage-card {
-  height: 90vh;
-  position: relative;
-  top: 5vh;
+  min-height: 100vh;
+  margin-top: $spacer;
+  margin-bottom: $spacer;
 
   .homepage-card-wrapper {
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
@@ -93,6 +93,14 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
+    position: absolute;
+    min-height: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+    height: 90vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     .homepage-card-wrapper {
       flex-direction: row;
       height: 100%;
