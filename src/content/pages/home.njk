@@ -52,37 +52,43 @@ socialLinks:
           {% endfor %}
         </div>
         
-
+       
       </div>
     </div>
     <div class="homepage-card-image" style="background-image: url('{{ heroImage }}')"></div>
   </div>
-  <div class="modal fade" id="contactModal" tabindex="-1"  aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <form name="contact" method="POST" data-netlify="true" action="/thank-you/">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="contactModalLabel">say hello</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-        
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">your name</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">message</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 </section>
+<div class="modal fade" id="contactModal" tabindex="-1"  aria-labelledby="contactModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" action="/thank-you/">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="contactModalLabel">say hello</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+              
+                  <div class="mb-3">
+                    <label for="nameInput" class="form-label">Name
+                    <input name="name" type="text" class="form-control" id="nameInput" placeholder="Full Name">
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="emailInput" class="form-label">Email Address
+                    <input name="email" type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="textInput" class="form-label">Message
+                    <textarea name="message" class="form-control" id="textInput" rows="5" placeholder="Your message ..."></textarea>
+                    </label>
+                  </div>
+                  <div class="form-footer">
+                  <div data-netlify-recaptcha="true"></div>
+                  <button type="submit" class="btn btn-primary">submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
