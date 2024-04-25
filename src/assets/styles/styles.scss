@@ -34,7 +34,6 @@ body {
   margin-bottom: $spacer;
 
   .homepage-card-wrapper {
-    // height: 100vh;
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
@@ -117,6 +116,7 @@ body {
     .homepage-card-body {
       width: 67%;
       padding: $spacer * 5 $spacer * 6;
+      overflow-y: auto;
 
       .homepage-card-body-top {
         figure {
