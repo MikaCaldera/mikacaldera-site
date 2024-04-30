@@ -4,10 +4,10 @@ title: Thank You! 👍
 description: "thank you page"
 sitemapIgnore: true
 index: false
-pageTitle: "creative thoughts & pensive concepts"
+pageTitle: "Thank you for reaching out! 🎉"
 logo: /assets/images/mika-logo.svg
 heroImage: /assets/images/mika-homepage.jpg
-body: "I’m an experienced designer and front-end developer with strong communication skills. My systematic approach to problem solving is reinforced with a balance of organizational skills, tireless determination, and empathy. Through observation and analysis, I have learned to create print and digital products meant to inspire and engage people. Authenticity and diversity are important to me because I believe honesty is the best way to solve problems and grow. I enjoy challenges, strengthening existing systems, and materializing innovative solutions."
+body: "Thank you for reaching out. I truly appreciate your message and look forward to connecting soon."
 buttonText: "resume"
 buttonLink: "/assets/images/Resume-Caldera.pdf"
 newTab: true
@@ -42,7 +42,7 @@ socialLinks:
       <div class="homepage-card-body-bottom">
         <div class="homepage-card-buttons">
           <a href="{{ buttonLink }}" class="button" {% if newTab == true %}target="_blank"{% endif %}>{{ buttonText }}</a>
-          <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#contactModal">thanks for reaching out          </button>
+          <a href="/" class="button">Return to Homepage</button>
         </div>
         <div class="homepage-card-social">
           {% for socialLink in socialLinks %}
